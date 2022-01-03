@@ -15,8 +15,10 @@ export const App = () => {
       <AuthContext.Provider value={(isAuthenticated, setisAuthenticated)}>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/conversation/:id" element={<Login />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/conversation" element={<Conversation />} />
+          <Route path="/conversation/:id" element={<TalkingToUser />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/*" element={<Profile />} />
         </Routes>
       </AuthContext.Provider>
     </Router>

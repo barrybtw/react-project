@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA1a9yJfwBMNFJMY_YX-dbUUhceKaZOpQU",
   authDomain: "messenger-react-app-91e7b.firebaseapp.com",
@@ -11,4 +12,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 
-export const auth = GoogleAuthProvider();
+export const provider = new GoogleAuthProvider();
+const auth = getAuth();

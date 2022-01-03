@@ -1,0 +1,36 @@
+// imports
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+// FONTS
+
+@font-face {
+  font-family: "Integral-regular";
+  src: url("./assets/fonts/IntegralCF-Regular.otf");
+}
+@font-face {
+  font-family: "Integral-medium";
+  src: url("./assets/fonts/IntegralCF-Medium.otf");
+}
+@font-face {
+  font-family: "Integral-bold";
+  src: url("./assets/fonts/IntegralCF-Bold.otf");
+}

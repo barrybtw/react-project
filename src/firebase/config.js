@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, onAuthStateChanged } from "firebase/auth";
+import { useEffect, useState } from "react";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA1a9yJfwBMNFJMY_YX-dbUUhceKaZOpQU",
@@ -13,4 +14,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const provider = new GoogleAuthProvider();
-const auth = getAuth();
+export const auth = getAuth();
+
+export const useAuth = () => {
+  const [currentUser, setCurrentUser] = useState();
+  useEffect(() => {
+    const unsub = onAuthStateChanged(auth, (user) => setCurrentUser(user));
+    return unsub;
+  }, []);
+  return currentUser;
+};

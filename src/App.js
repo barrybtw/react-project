@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useState } from "react";
 
 import { useAuth } from "./firebase/config";
 
@@ -9,11 +8,18 @@ import { authContext } from "./context/AuthContext";
 //Pages import, 1 line thanks.
 import { Login, Conversation, Profile } from "./pages";
 
+//Component imports, 1 line thanks.
+import { Navbar } from "./components";
+
+//Helpers
+import { handleLogout } from "./helpers/helpers";
+
 export const App = () => {
   const currentUser = useAuth();
   return (
     <Router>
-      <authContext.Provider value={{ currentUser }}>
+      <authContext.Provider value={{ currentUser, handleLogout }}>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/conversation" element={<Conversation />} />

@@ -1,3 +1,5 @@
-import { Home } from "./home/Home";
+import { Login } from "./login/Login";
+import { Profile } from "./profile/Profile";
+import { Conversation } from "./message/Conversation";
 
-export { Home };
+export { Login, Profile, Conversation };

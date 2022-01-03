@@ -6,11 +6,12 @@ import { authContext } from "../../context/AuthContext";
 import { signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
 import { auth, provider } from "../../firebase/config";
 import { useNavigate } from "react-router-dom";
+import { handleLogout } from "../../helpers/helpers";
 
 //Assets
 
 export const Login = () => {
-  const { isAuth, setIsAuth, currentUser } = useContext(authContext);
+  const { currentUser } = useContext(authContext);
   const formRef = useRef();
 
   const [email, setEmail] = useState("");
@@ -27,9 +28,6 @@ export const Login = () => {
       .then((result) => {
         // Signed in
         console.log(result.user);
-        setIsAuth(true);
-        localStorage.setItem("isLoggedIn", true);
-        localStorage.setItem("googleID", result.uid);
         // ...
 
         //To Save to database later
@@ -37,12 +35,11 @@ export const Login = () => {
         // const email = result.user.email;
         // const useravatar = result.user.photoURL;
 
-        // navigate("/conversation");
+        navigate("/conversation");
       })
       .catch((error) => {
         // Failed sign in
-        console.log(error.message);
-        console.log(error.code);
+        console.log(error);
         // ...
       });
   };
@@ -51,14 +48,12 @@ export const Login = () => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        // navigate("/conversation");
+        navigate("/conversation");
         console.log(currentUser);
         // ...
       })
       .catch((error) => {
         // Failed sign in
-        const errorCode = error.code;
-        const errorMessage = error.message;
         console.log(error);
         // ...
       });
@@ -115,11 +110,12 @@ export const Login = () => {
       <div className="login__splitter">
         Don't have an account? Make one right now!
       </div>
-      <h1>{currentUser && <>{currentUser.displayName}</>}</h1>
+      <h1>{currentUser && <>{currentUser.email}</>}</h1>
       <div className="login__google">
         <button onClick={loginWithGoogle} className="login__button--styles">
           Login With Google
         </button>
+        {currentUser && <button onClick={handleLogout}>Logout</button>}
       </div>
     </section>
   );

@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, getAuth, onAuthStateChanged } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 
 const firebaseConfig = {
@@ -23,4 +28,8 @@ export const useAuth = () => {
     return unsub;
   }, []);
   return currentUser;
+};
+
+export const logout = () => {
+  return signOut(auth);
 };

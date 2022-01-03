@@ -12,7 +12,6 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-      buhuhuehefuefbewjfbwfnkfsbckdbvksdnvkdn
     </Router>
   );
 };

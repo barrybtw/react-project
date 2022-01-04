@@ -1,8 +1,7 @@
 import "./conversation.scss";
 
 // Imports
-import { useEffect } from "react";
-import { useContext } from "react/cjs/react.development";
+import { useEffect, useContext } from "react";
 import { authContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 

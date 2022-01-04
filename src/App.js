@@ -6,7 +6,7 @@ import { useAuth } from "./firebase/config";
 import { authContext } from "./context/AuthContext";
 
 //Pages import, 1 line thanks.
-import { Login, Conversation, Profile } from "./pages";
+import { Login, Conversation, Profile, CreateUser } from "./pages";
 
 //Component imports, 1 line thanks.
 import { Navbar } from "./components";
@@ -23,6 +23,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/conversation" element={<Conversation />} />
+          <Route path="/create-user" element={<CreateUser />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/*" element={<Profile />} />
         </Routes>

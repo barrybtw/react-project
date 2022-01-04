@@ -1,0 +1,48 @@
+// nav
+// site-logo
+// nav__link--list
+// nav__link
+// nav__link--anchor
+// link__hover-effect
+// link__hover-effect--black
+// nav__link--anchor-primary
+// nav__login
+// nav__logout
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 12px auto 0 auto;
+  padding: 0 20px;
+  height: 80px;
+}
+
+#site-logo {
+  width: 100px;
+}
+
+.nav__link--list {
+  display: flex;
+  align-items: center;
+}
+
+.nav__link--anchor {
+  margin: 0 24px;
+  font-size: 18px;
+  color: #242424;
+  font-weight: 300;
+}
+
+// SIGN UP / SIGN IN & OUT BUTTON
+.nav__link--anchor-primary {
+  border: none;
+  padding: 0.75rem 2rem;
+  margin: 0 12px;
+  outline: none;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  font-family: "Integral-regular", sans-serif;
+}

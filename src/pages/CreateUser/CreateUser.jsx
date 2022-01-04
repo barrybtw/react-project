@@ -1,13 +1,16 @@
 import "./createUser.scss";
 import { useContext, useRef, useState } from "react";
 import { authContext } from "../../context/AuthContext";
-
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase/config";
 export const CreateUser = () => {
   const { currentUser } = useContext(authContext);
   const formRef = useRef();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [region, setRegion] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,6 +21,22 @@ export const CreateUser = () => {
   };
   const handlePassword = (event) => {
     setPassword(event.target.value);
+  };
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
+  const handleRegion = (event) => {
+    setRegion(event.target.value);
+  };
+
+  const createNewUserWithMail = () => {
+    createUserWithEmailAndPassword(auth, email, password);
+
+    // To save to mongodb
+    // email
+    // password
+    // name
+    // region
   };
 
   return (
@@ -60,7 +79,7 @@ export const CreateUser = () => {
           <input
             type="text"
             placeholder="Begin typing..."
-            onChange={handlePassword}
+            onChange={handleName}
             className="createUser__form-input createUser__input--form-input-name"
           />
         </div>
@@ -71,25 +90,15 @@ export const CreateUser = () => {
           <input
             type="text"
             placeholder="Begin typing..."
-            onChange={handlePassword}
+            onChange={handleRegion}
             className="createUser__form-input createUser__input--form-input-name"
           />
         </div>
-        <div className="createUser__form-field">
-          <label htmlFor="" className="createUser__form-label">
-            Country of residence
-          </label>
-          <input
-            type="text"
-            placeholder="Begin typing..."
-            onChange={handlePassword}
-            className="createUser__form-input createUser__input--form-input-country"
-          />
-        </div>
+
         <button
           form="createUser__form"
           className="createUser__button--styles createUser__form-submit"
-          //   onClick={createNewUserWithMail}
+          onClick={createNewUserWithMail}
         >
           Create New User
         </button>

@@ -10,7 +10,13 @@ export const Conversation = () => {
   const { currentUser } = useContext(authContext);
   const navigate = useNavigate();
   useEffect(() => {
-    !currentUser && navigate("/");
+    const isUserLoggedIn = async () => {
+      if (await currentUser) {
+        console.log("lel");
+      } else {
+        navigate("/");
+      }
+    };
   }, []);
   return (
     <div>

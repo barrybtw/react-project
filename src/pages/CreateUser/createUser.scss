@@ -1,0 +1,93 @@
+// createUser__container
+// createUser__header
+// createUser__form
+// createUser__form-field
+// createUser__form-label
+// createUser__form-input
+// createUser__input-form--input-email
+// createUser__input--form-input-password
+// createUser__button--styles
+// createUser__form-submit
+
+.createUser__button--styles {
+  border: none;
+  padding: 1rem 3rem;
+  font-family: "Integral-bold", sans-serif;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+//...
+
+.createUser__container {
+  width: 100vw;
+  max-width: 99vw;
+  min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  flex-direction: column;
+}
+
+.createUser__header {
+  font-family: "Integral-bold", sans-serif;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  max-width: 1400px;
+
+  background: url("./../../assets/login.jpg");
+  -webkit-background-clip: text;
+  color: transparent;
+
+  user-select: none;
+  text-align: center;
+}
+
+.createUser__form {
+  max-width: 400px;
+  width: 90%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.createUser__form-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 4rem;
+
+  width: 100%;
+}
+
+.createUser__form-label {
+  font-family: "Integral-bold", sans-serif;
+  letter-spacing: 2px;
+}
+
+.createUser__form-input {
+  padding: 4px 2px;
+  border: linear;
+  width: 60%;
+  margin-top: 1rem;
+
+  border: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 213, 252, 0.8)
+    ),
+    1px solid;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, rgb(0, 208, 255), rgb(0, 128, 111));
+  border-image-slice: 1;
+  &::placeholder {
+    font-size: 1rem;
+    font-family: Poppins, sans-serif;
+  }
+}

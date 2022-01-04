@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
+// We can change to browser router later, hashrouter just works with netlify atm
 import { useAuth } from "./firebase/config";
 
 //Context API

@@ -7,10 +7,10 @@ import { authContext } from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 export const Conversation = () => {
-  const currentUser = useContext(authContext);
+  const { currentUser } = useContext(authContext);
   const navigate = useNavigate();
   useEffect(() => {
-    if (currentUser.email === undefined) navigate("/");
+    !currentUser && navigate("/");
   }, []);
   return (
     <div>

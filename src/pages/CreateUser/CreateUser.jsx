@@ -85,7 +85,7 @@ export const CreateUser = () => {
         </div>
         <div className="createUser__form-field">
           <label htmlFor="" className="createUser__form-label">
-            Name
+            Name of Region
           </label>
           <input
             type="text"

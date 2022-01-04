@@ -2,7 +2,7 @@ import { useContext, useEffect } from "react";
 import { authContext } from "../../context/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/site_logo.png";
-import "./navbar.scss";
+import "./Navbar.scss";
 import { logout } from "../../firebase/config";
 
 export const Navbar = () => {

@@ -1,7 +1,8 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 // We can change to browser router later, hashrouter just works with netlify atm
 import { useAuth } from "./firebase/config";
-
+import io from "socket.io-client";
+const socket = io.connect("http://localhost:4000");
 //Context API
 import { authContext } from "./context/AuthContext";
 
@@ -18,7 +19,7 @@ export const App = () => {
   const currentUser = useAuth();
   return (
     <HashRouter>
-      <authContext.Provider value={{ currentUser, handleLogout }}>
+      <authContext.Provider value={{ currentUser, handleLogout, io, socket }}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Login />} />

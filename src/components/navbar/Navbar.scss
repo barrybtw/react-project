@@ -88,6 +88,9 @@
   &:focus {
     background-color: #a585e5;
   }
+  @media (max-width: 530px) {
+    display: none;
+  }
   > svg {
     color: orange;
   }

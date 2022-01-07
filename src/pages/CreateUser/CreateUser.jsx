@@ -30,13 +30,9 @@ export const CreateUser = () => {
   };
 
   const createNewUserWithMail = () => {
-    createUserWithEmailAndPassword(auth, email, password);
-
-    // To save to mongodb
-    // email
-    // password
-    // name
-    // region
+    createUserWithEmailAndPassword(auth, email, password).then((cred) => {
+      console.log(cred.user.displayName);
+    });
   };
 
   return (

@@ -41,20 +41,23 @@ export const Navbar = () => {
           </svg>
           Unlock Pro
         </button>
-        {currentUser ? (
-          <img
-            src={default__user}
-            alt={`Your avatar`}
-            className="nav__avatar"
-          />
-        ) : (
-          <img
-            src={default__user}
-            alt="Default user logo"
-            className="nav__avatar"
-          />
-        )}
+        {currentUser ? <Dropdown letter="N" /> : <Dropdown letter="N" />}
       </div>
     </nav>
+  );
+};
+
+const Dropdown = ({ letter }) => {
+  return (
+    <div className="dropdown">
+      <span>{letter}</span>
+      <ul
+        className="dropdown1"
+        style={({ display: "flex important" }, { opacity: 1 })}
+      >
+        <li>Item 1</li>
+        <li>Item 2</li>
+      </ul>
+    </div>
   );
 };

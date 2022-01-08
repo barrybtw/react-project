@@ -1,0 +1,38 @@
+.course__lesson {
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+}
+
+.course__lesson--icon {
+  border: 1px solid #21242c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.course__btn {
+  min-width: 30px;
+  background-color: transparent;
+}
+
+.course__btn--player {
+  color: #242424;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.course__lesson--anchor {
+  width: 100%;
+  color: #242424;
+}
+
+.course__lesson--name {
+  padding-left: 16px;
+}

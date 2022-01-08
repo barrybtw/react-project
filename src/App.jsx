@@ -13,6 +13,7 @@ import { Navbar } from "./components";
 
 //Helpers
 import { handleLogout } from "./helpers/helpers";
+import { Sidebar } from "./components/Sidebar/Sidebar";
 
 export const App = () => {
   const currentUser = useAuth();
@@ -20,6 +21,7 @@ export const App = () => {
     <HashRouter>
       <authContext.Provider value={{ currentUser, handleLogout }}>
         <Navbar />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/create-user" element={<CreateUser />} />

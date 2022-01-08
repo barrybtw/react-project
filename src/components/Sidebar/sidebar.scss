@@ -1,0 +1,41 @@
+.sidebar__wrapper {
+  width: 200px;
+  border-right: 2px solid hsla(0, 0%, 52.2%, 0.1);
+  height: calc(100vh - 58px);
+
+  .menu__items {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    cursor: pointer;
+
+    > div {
+      display: flex;
+    }
+
+    .menu__icon {
+      transition: 0.3s;
+    }
+
+    .rotate__icon {
+      transform: rotate(180deg);
+      transition: all 0.3s;
+    }
+  }
+
+  .menu__item--selected {
+    color: red;
+    transition: 0.3s;
+  }
+
+  .drop__menu {
+    background-color: red;
+    // height: 0;
+    .drop__menu--items {
+      padding-left: 25px;
+      // display: none;
+    }
+  }
+}

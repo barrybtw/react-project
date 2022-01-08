@@ -1,0 +1,97 @@
+.course__wrapper {
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  min-width: 350px;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  padding: 32px 0;
+}
+
+.row {
+  width: auto;
+  max-width: 1170px;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 0 24px;
+}
+
+.row__course {
+  max-width: 1200px !important;
+  box-sizing: content-box;
+}
+
+.dashboard {
+  width: 100%;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.progress {
+  height: 120px;
+  width: 120px;
+}
+
+.dashboard__details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  justify-content: center;
+  grid-gap: 8px;
+  width: 100%;
+}
+
+.dashboard__details--title {
+  font-size: 24px;
+  line-height: 1.24;
+  color: #000;
+}
+
+.dashboard__detail {
+  color: #777;
+  display: flex;
+  align-items: flex-start;
+}
+
+.dashboard__details--para {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.lesson {
+  margin-bottom: 26px;
+}
+
+.card {
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgb(90 97 105 / 12%), 0 6px 10px rgb(90 97 105 / 3%),
+    0 0 70px rgb(90 97 105 / 10%);
+  border-radius: 20px;
+  padding: 24px 24px 28px;
+  overflow: hidden;
+}
+
+.card__title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1.24;
+}
+
+.card__para {
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.card__para--text {
+  padding-bottom: 12px;
+}
+
+.card__course--title {
+  margin-bottom: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(33, 36, 44, 0.64);
+}
